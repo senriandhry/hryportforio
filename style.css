@@ -269,6 +269,149 @@ header h1 {
     font-size: 1.5rem;
 }
 
+/* キャラクターセクション全体 */
+.character-section {
+    padding: 80px 0;
+    background-color: rgba(255, 255, 255, 0.05); /* ほんのり背景を変える */
+}
+
+.char-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.char-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid #fff; /* 白の縁取り */
+    box-shadow: 0 0 15px rgba(230, 0, 0, 0.3); /* 赤い光の影 */
+}
+
+.char-info {
+    text-align: left;
+    max-width: 600px;
+}
+
+.char-header h3 {
+    font-size: 2rem;
+    color: #e60000; /* シホウカラーの赤 */
+    margin-bottom: 5px;
+}
+
+.char-header h3 span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.char-cv {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* プロフィールテーブル */
+.char-profile {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.char-profile th, .char-profile td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.char-profile th {
+    width: 100px;
+    color: #e60000;
+    font-weight: bold;
+}
+
+.char-story {
+    background: #fff;
+    padding: 20px;
+    border-left: 5px solid #e60000;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* 利用規約（開閉式） */
+.terms-container details {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.terms-container summary {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+    list-style: none;
+}
+
+.terms-container summary:hover {
+    background: #e60000;
+}
+
+.terms-content {
+    padding: 20px;
+    font-size: 0.85rem;
+    max-height: 300px;
+    overflow-y: auto; /* 長い場合はスクロール */
+}
+
+.terms-content h4 { margin-bottom: 10px; border-bottom: 1px solid #ccc; }
+.terms-content h5 { margin-top: 15px; color: #e60000; }
+
+/* ダウンロードボタンのエリア */
+.char-download {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #e60000; /* シホウカラーの赤 */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 0, 0, 0.3);
+}
+
+.download-btn:hover {
+    background-color: #b30000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 0, 0, 0.4);
+    color: #fff;
+}
+
+.download-info {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .char-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .char-image img { width: 200px; }
+}
+
 /* --- スマホ表示の時は縦並びにする設定 --- */
 @media (max-width: 768px) {
     .about-content {
@@ -285,6 +428,48 @@ header h1 {
         width: 150px;           /* スマホでは画像を少し小さく */
         height: auto;
     }
+}
+
+/* 利用規約の表示エリア */
+.terms-container {
+    background: rgba(255, 255, 255, 0.5); /* ほんのり白背景 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.terms-content h4 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e60000; /* シホウカラーの赤 */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.terms-content h5 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #e60000;
+    font-weight: bold;
+}
+
+.terms-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.terms-content li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.terms-footer {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
 }
 
 /* スマホ表示のときは縦並びに戻す */
@@ -338,5 +523,13 @@ header h1 {
     .about-image img {
         width: 150px;          /* スマホでは少し小さく */
         height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .download-btn {
+        width: 100%; /* スマホでは横幅いっぱいに */
+        padding: 12px 20px;
+        font-size: 1rem;
     }
 }
